@@ -3,7 +3,17 @@ addLayersAttributesV2();
 
 function addLayersAttributesV2() {
     try {
-    	var refParcelNumber = getPrimaryCapParcel(); 
+    	//var refParcelNumber = getPrimaryCapParcel(); 
+        var capParcelResult = aa.parcel.getParcelandAttribute(capId,null);
+        if (capParcelResult.getSuccess())
+        {
+            var Parcels = capParcelResult.getOutput().toArray();
+            for (zz in Parcels)
+                {
+                refParcelNumber = Parcels[zz].getParcelNumber();
+                break;
+            }
+        }
         var airport = getGISInfoByParcel_DELAND(refParcelNumber,"Accela/Accela_Basemap", "Airport Zoning Overlay", "AIRPORTOVERLAYNAME");
         //getGISInfo("Accela/Accela_Basemap", "Airport Zoning Overlay", "AIRPORTOVERLAYNAME");
         var downtown = getGISInfoByParcel_DELAND(refParcelNumber,"Accela/Accela_Basemap", "Downtown Support Design District", "PLANDISTNAME"); 

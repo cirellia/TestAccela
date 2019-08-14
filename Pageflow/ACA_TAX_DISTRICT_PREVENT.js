@@ -99,11 +99,12 @@ try
   // get jurisdiction
   var parcelJurisd = getGISInfoByParcel_DELAND(refParcelNumber,"Accela/Accela_Basemap", "Parcels", "TAXDIST");
   logDebug("parcelJurisd: "+parcelJurisd);
-  if(parcelJurisd != "012"){
-    cancel=true;
-    showMessage=true;
-    comment("this parcel is not in the City of DeLand City Limits, please see other jurisdiction or select another parcel. " + parcelJurisd); 
-  } 
+  if (parcelJurisd)
+    if(parcelJurisd != "012"){
+      cancel=true;
+      showMessage=true;
+      comment("this parcel is not in the City of DeLand City Limits, please see other jurisdiction or select another parcel. " + parcelJurisd); 
+    } 
 } catch (err) { 
   logDebug("Error on Pageflow script ACA_TAX_DISTRICT_PREVENT. Please contact Administrator. " + err); 
 }
@@ -140,7 +141,7 @@ else {
     }
 }
 logDebug("Sending email.");
-//aa.sendEmail("DoNotReply@DeLand.gov", "mag@byrnesoftware.com", "", "ACA - Tax District Prevent", "Message: " + message + " Debug: " + debug, null);
+aa.sendEmail("DoNotReply@DeLand.gov", "clb@byrnesoftware.com", "", "ACA PROD - Tax District Prevent", "Message: " + message + " Debug: " + debug, null);
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========External Functions (used by Action entries)
@@ -186,7 +187,10 @@ function getGISInfoByParcel_DELAND(pParcelNo,svc,layer,attributename)
       
       for (a2 in proxArr)
       {
+        logDebug("ProxArr: " + proxArr[a2]);
         var proxObj = proxArr[a2].getGISObjects();  // if there are GIS Objects here, we're done
+        logDebug("ProxObj: " + proxObj);
+
         for (z1 in proxObj)
         {
           var v = proxObj[z1].getAttributeValues()

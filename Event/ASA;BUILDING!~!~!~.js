@@ -1,7 +1,8 @@
 BD_Submittal_Fee();
 
-//add layer attributes to records
-addLayersAttributes();
 if(!publicUser){
+    //add layer attributes to records - moving inside check for backoffice
+    addLayersAttributes();
+
     attachOwnerDisclosure();
 }

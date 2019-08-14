@@ -2609,7 +2609,8 @@ function addLayersAttributes() {
         var institution = getGISInfo("Accela/Accela_Basemap", "Institutional Overlay", "Overlay");
         var medical = getGISInfo("Accela/Accela_Basemap", "Community Health Overlay", "Overlay");
         var recreation = getGISInfo("Accela/Accela_Basemap", "Recreational Overlay", "Overlay");
-                var zoned = getGISInfoArray("Accela/Accela_Basemap", "Zoning District Boundaries", "Zoning_Dis", -1, "feet");
+        var zoned = getGISInfoArray("Accela/Accela_Basemap", "Zoning District Boundaries", "Zoning_Dis", -1, "feet");
+
         logDebug("Airport: " + airport +"; downtown: " + downtown+ "Future Land Use: " + futureLandUse + "; Historic Overlay: " + historic + "; Institution: " + institution + "; Medical: " + medical + "; Recreation: " + recreation + "Zoning: " + zoned);
 
         if (airport){
@@ -3259,7 +3260,7 @@ function getGISInfo_v3(svc,layer,attributename)
 
     for (a1 in fGisObj) // for each GIS object on the Cap.  We'll only send the last value
         {
-        var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-0.1", distanceType, buf);
+        var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-1", distanceType, buf);
 
         if (bufchk.getSuccess())
             var proxArr = bufchk.getOutput();
@@ -3319,7 +3320,7 @@ function getGISInfo_v3_ASB(svc,layer,attributename)
 
     for (a1 in fGisObj) // for each GIS object on the Parcel.  We'll only send the last value
     {
-        var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-0.1", distanceType, buf);
+        var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-1", distanceType, buf);
 
         if (bufchk.getSuccess())
             var proxArr = bufchk.getOutput();
@@ -3343,7 +3344,7 @@ function getGISInfo_v3_ASB(svc,layer,attributename)
 function getGISInfoArray(svc,layer,attributename) // optional: numDistance, distanceType
 {
     try{
-        var numDistance = 0
+        var numDistance = 0;
         if (arguments.length >= 4) numDistance = arguments[3]; // use numDistance in arg list
         var distanceType = "feet";
         if (arguments.length == 5) distanceType = arguments[4]; // use distanceType in arg list
@@ -3710,7 +3711,7 @@ function getGISInfoByParcel_DELAND(pParcelNo,svc,layer,attributename)
 
     for (a1 in fGisObj) // for each GIS object on the Cap.  We'll only send the last value
     {
-      var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-0.1", distanceType, buf);
+      var bufchk = aa.gis.getBufferByRadius(fGisObj[a1], "-1", distanceType, buf);
 
       if (bufchk.getSuccess())
         var proxArr = bufchk.getOutput();
@@ -3933,8 +3934,12 @@ function getGISInfoArrayByParcel_DELAND(pParcelNo,svc,layer,attributename)
                 var proxObj = proxArr[a2].getGISObjects();  // if there are GIS Objects here, we're done
                 for (z1 in proxObj)
                 {
+                    logDebug("Found GIS Object, getting attribute.");
                     var v = proxObj[z1].getAttributeValues()
-                    retArray.push(v[0]);
+                    for (vi in v) {
+                        if (!exists(v[vi], retArray))
+                            retArray.push(v[vi]);
+                    }
                 }
             }
         }

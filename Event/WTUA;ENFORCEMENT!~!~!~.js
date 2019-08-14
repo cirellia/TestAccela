@@ -1,18 +1,16 @@
 //To deactivate the other parallel tasks when Follow Up is initially activated
-if (wfTask == "Initial Investigation" && matches(wfStatus, "Prelim NOV", "NOV", "In Violation")) {
-    deactivateTask("Magistrate");
-    deactivateTask("Lien");
-    deactivateTask("Abatement");
+logDebug("Starting WTUA Script for workflow updates");
+if (wfTask == "Follow Up" && matches(wfStatus, "First Magistrate Hearing Scheduled", "Second Magistrate Hearing Scheduled")) {
+ 		activateTask("Follow Up");
+		}
+if (matches(wfTask,"Follow Up","Initial Investigation","Case Intake") && matches(wfStatus, "No Violation", "Duplicate", "In-Compliance/Violation Corrected")) {
+ 		closeTask("Close", "Case-Closed", "Closed via script");
+		}		
+
+if(matches(wfTask, "Initial Inspection" ,"Follow Up") && wfStatus == "Print NOV") {
+   Code_Generate_Reports();
 }
-if (wfTask == "Follow Up" && matches(wfStatus, "First Magistrate Hearing Scheduled")) {
-    if (!isTaskActive("Lien"));
-    deactivateTask("Lien");
-    if (!isTaskActive("Abatement"));
-    deactivateTask("Abatement");
-}
-if (wfTask == "Follow Up" && matches(wfStatus, "Abatement")) {
-    if (!isTaskActive("Lien"));
-    deactivateTask("Lien");
-    if (!isTaskActive("Magistrate"));
-    deactivateTask("Magistrate");
-}
+
+Code_Assign_Record();
+
+Code_Lien_Compliance();

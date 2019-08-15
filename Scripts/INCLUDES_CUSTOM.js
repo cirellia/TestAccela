@@ -1449,9 +1449,11 @@ function BD_Assess_Permit_Fees() {
                         logDebug("Pool Fee COMMPOOL Assessed");
                     }
                     else{
-                        logDebug("Assessing fee for commercial permit");
-                        aa.finance.switchCalcFactor(capId,"CALC","ADMIN");
-                        updateFee(feeItemCom, feeSchedule, 'FINAL', 1, "N");
+                        if(!matches(AInfo["Structure Type"],"Fence")){
+                            logDebug("Assessing fee for commercial permit");
+                            aa.finance.switchCalcFactor(capId,"CALC","ADMIN");
+                            updateFee(feeItemCom, feeSchedule, 'FINAL', 1, "N");
+                        }
                     }
                 }
                 else if (appMatch("Building/Mechanical/NA/NA"))
@@ -1496,9 +1498,11 @@ function BD_Assess_Permit_Fees() {
                         logDebug("Res Underground Pool Fee REUNDGRD Assessed");
                     }
                     else{
-                        logDebug("Adding Residential Permit fee")
-                        aa.finance.switchCalcFactor(capId,"CALC","ADMIN");
-                        updateFee(feeItemRes, feeSchedule, 'FINAL', 1, "N");
+                        if(!matches(AInfo["Structure Type"],"Fence")){
+                            logDebug("Adding Residential Permit fee")
+                            aa.finance.switchCalcFactor(capId,"CALC","ADMIN");
+                            updateFee(feeItemRes, feeSchedule, 'FINAL', 1, "N");
+                        }
                     }
                 }
                 else if (appMatch("Building/Mechanical/NA/NA"))

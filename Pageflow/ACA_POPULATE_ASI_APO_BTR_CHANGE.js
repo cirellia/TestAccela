@@ -258,7 +258,7 @@ if (debug.indexOf("**ERROR") > 0) {
 /*------------------------------------------------------------------------------------------------------/
  | End ACA_POPULATE_MODIFICATION_NAME
  /-----------------------------------------------------------------------------------------------------*/
- //aa.sendEmail("DoNotReply@DeLand.gov", "mag@byrnesoftware.com", "", "ACA Modification - OnLoad", "Message: " + message + " Debug: " + debug, null);
+ //aa.sendEmail("DoNotReply@DeLand.gov", "Cirellia@deland.org", "", "ACA Modification - OnLoad", "Message: " + message + " Debug: " + debug, null);
 
  function scrubContactListSequenceNumbers(contactList)
 {

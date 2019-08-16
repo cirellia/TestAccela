@@ -1680,7 +1680,7 @@ function BD_Electrical_Clearance() {
         //var emailTo = "floridamunicipalities@duke-energy.com";
         var capIDScriptModel = aa.cap.createCapIDScriptModel(capId.getID1(), capId.getID2(), capId.getID3());
         var altId = capId.getCustomID();
-        var emailTo = "mag@byrnesoftware.com";
+        var emailTo = "Cirellia@deland.org";
         var emailFrom = "no-reply@deland.gov";
         var iDate = inspResultDate;
         var emailParameters = aa.util.newHashtable();
@@ -2905,7 +2905,7 @@ function BD_Gas_Clearance() {
         //var emailTo = "floridamunicipalities@duke-energy.com";
         var capIDScriptModel = aa.cap.createCapIDScriptModel(capId.getID1(), capId.getID2(), capId.getID3());
         var altId = capId.getCustomID();
-        var emailTo = "mag@byrnesoftware.com";
+        var emailTo = "Cirellia@deland.org";
         var emailFrom = "no-reply@deland.gov";
         var iDate = inspResultDate;
         var emailParameters = aa.util.newHashtable();
@@ -3211,7 +3211,7 @@ function scheduleInspFromDocumentUpload(capId){
 
             var documentList = documentModelArray;
             if (!documentList) {
-                aa.sendEmail("DoNotReply@DeLand.org", "clb@byrnesoftware.com", "", "DUA:BUILDING/*/*/* Event", "Message: " + message + " Debug: " + debug + " DocList was null!", null);
+                aa.sendEmail("DoNotReply@DeLand.org", "Cirellia@deland.org", "", "DUA:BUILDING/*/*/* Event", "Message: " + message + " Debug: " + debug + " DocList was null!", null);
                 return false;
             } else {
 
@@ -3232,7 +3232,7 @@ function scheduleInspFromDocumentUpload(capId){
         logDebug("Error on DUA Event custom function scheduleInspFromDocumentUpload(). Please contact administrator. Err: " + err);
     }
 
-    aa.sendEmail("DoNotReply@DeLand.org", "clb@byrnesoftware.com", "", "DUA:BUILDING/*/*/* Event", "Message: " + message + " Debug: " + debug, null);
+    aa.sendEmail("DoNotReply@DeLand.org", "Cirellia@deland.org", "", "DUA:BUILDING/*/*/* Event", "Message: " + message + " Debug: " + debug, null);
 
 }
 
@@ -3852,7 +3852,7 @@ function notifyContactInspResult(conType){
         addParameter(params, "$InspResult$", inspResult);
         addParameter(params, "$InspComment$", inspComment);
         
-        //emailTo = "jal@byrnesoftware.com"; // TO TEST. REMOVE WHEN MOVING TO ENVIRONMENT.
+        //emailTo = "Cirellia@deland.org"; // TO TEST. REMOVE WHEN MOVING TO ENVIRONMENT.
         
         if(emailTo){
             var sendRes = aa.document.sendEmailByTemplateName("", emailTo, "", emlTemplate, params, null);

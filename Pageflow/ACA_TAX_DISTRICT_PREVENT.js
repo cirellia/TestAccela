@@ -140,7 +140,7 @@ else {
     }
 }
 logDebug("Sending email.");
-//aa.sendEmail("DoNotReply@DeLand.gov", "mag@byrnesoftware.com", "", "ACA - Tax District Prevent", "Message: " + message + " Debug: " + debug, null);
+//aa.sendEmail("DoNotReply@DeLand.gov", "Cirellia@deland.org", "", "ACA - Tax District Prevent", "Message: " + message + " Debug: " + debug, null);
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========External Functions (used by Action entries)

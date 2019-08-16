@@ -43,7 +43,7 @@ var errorCode = "0";
 //  showMessage=true;
 //  comment("Test");
 //}
-//aa.sendEmail("DoNotReply@DeLand.gov", "mag@byrnesoftware.com", "", "ACA_AMEND_ONLOAD - OnLoad", "Message: " + message + " Debug: " + debug, null);
+//aa.sendEmail("DoNotReply@DeLand.gov", "Cirellia@deland.org", "", "ACA_AMEND_ONLOAD - OnLoad", "Message: " + message + " Debug: " + debug, null);
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Functions (used by copy)

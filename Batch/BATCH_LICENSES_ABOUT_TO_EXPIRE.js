@@ -219,7 +219,7 @@ try {
                         emailParameters.put("$$CAPNAME$$", appTypeAlias);
                         emailParameters.put("$$CAPCADDR$$", locationAddress);
                         //emailParameters.put("$$expirationDate$$", licExpDateString);
-                        emailTo = "mag@byrnesoftware.com"; //USED FOR TESTING
+                        emailTo = "Cirellia@deland.org"; //USED FOR TESTING
                         var capIDScriptModel = aa.cap.createCapIDScriptModel(capId.getID1(), capId.getID2(), capId.getID3());
                         var sendNotificationResult = null;
                         sendNotificationResult = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, "", emailTemplate, emailParameters, capIDScriptModel, null);

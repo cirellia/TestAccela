@@ -1489,7 +1489,7 @@ function BD_Electrical_Clearance() {
         //var emailTo = "floridamunicipalities@duke-energy.com";
         var capIDScriptModel = aa.cap.createCapIDScriptModel(capId.getID1(), capId.getID2(), capId.getID3());
         var altId = capId.getCustomID();
-        var emailTo = "mag@byrnesoftware.com";
+        var emailTo = "Cirellia@deland.org";
         var emailFrom = "no-reply@deland.gov";
         var iDate = inspResultDate;
         var emailParameters = aa.util.newHashtable();
@@ -2654,7 +2654,7 @@ function BD_Gas_Clearance() {
         //var emailTo = "floridamunicipalities@duke-energy.com";
         var capIDScriptModel = aa.cap.createCapIDScriptModel(capId.getID1(), capId.getID2(), capId.getID3());
         var altId = capId.getCustomID();
-        var emailTo = "mag@byrnesoftware.com";
+        var emailTo = "Cirellia@deland.org";
         var emailFrom = "no-reply@deland.gov";
         var iDate = inspResultDate;
         var emailParameters = aa.util.newHashtable();

@@ -2650,6 +2650,10 @@ function addLayersAttributes() {
             } else
                 editAppSpecific("Zoned",  "N/A");
 
+
+    editAppSpecific("Perform GIS Sync","UNCHECKED");
+    editAppSpecific("Last GIS Sync Date", dateAdd(null,0));
+
     }
     catch (err) {
         showMessage = true;

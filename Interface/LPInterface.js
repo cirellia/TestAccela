@@ -424,6 +424,7 @@ function getRefLicenseProf(refstlic,licenseType)
 	return refLicObj;
     }
     
+    
 function openDocument(docFilePath) {
     logDebug("Opening " + docFilePath);
 	try

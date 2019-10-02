@@ -138,8 +138,11 @@ function processLine(line) {
     }
     licenseNbr = pieces[1].toString().replace(/"/g, "");
     if (licenseNbr == "") {
-        logDebug("No license number for entry " + line);
-        return;
+    	licenseNbr = "VOL" + pieces[0].toString().replace(/"/g, "");
+    	if (licenseNbr == "" ) {
+    		logDebug("No license number for entry " + line);
+    		return;
+    	}
     }
     logDebug("Processing license number = " + licenseNbr);
     conType = pieces[3].toString();

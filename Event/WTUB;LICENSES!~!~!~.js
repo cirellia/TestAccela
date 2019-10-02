@@ -6,6 +6,11 @@ if(appMatch("Licenses/Business/Tax Receipt/Application") &&
 	skipFeeCheck = true;
 }
 
+if(appMatch("Licenses/Temporary/Event/Permit") &&
+		   AInfo["Event Organizer Type"] == '501c3 Not for Profit' &&
+		   (AInfo['Total Fire Fees'] == null || AInfo['Total Fire Fees'] == 0 || AInfo['Total Fire Fees'] == undefined || AInfo['Total Fire Fees'] == "")){
+			skipFeeCheck = true;
+		}
 
 
 var feeArr = loadFees();

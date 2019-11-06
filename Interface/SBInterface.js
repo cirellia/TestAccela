@@ -78,8 +78,8 @@ try {
     endTime = aa.env.getValue("endTime");
     if (!endTime || endTime == "") {
             endTime = "23:59:59";
-            endDateStr = dateAdd(null, -1);
-            endDate = new Date(endDateStr);
+        //    endDateStr = dateAdd(null, -1);
+         //   endDate = new Date(endDateStr);
     }
         
 	toDateStr = (endDate.getMonth() + 1) + "/" + endDate.getDate() + "/" + endDate.getFullYear();
@@ -247,7 +247,7 @@ function getVoids(fromDateTimeStr, toDateTimeStr)  {
 	var rSet = sStmt.executeQuery();
 	while (rSet.next()) {
 		tranAmt = rSet.getFloat("tran_amount");
-        tranAmt = -tranAmt;
+   //     tranAmt = -tranAmt;
         acctCode = rSet.getString("gf_l2");
         feeDesc =  "" + rSet.getString("gf_des");
         acctCode1 = "";

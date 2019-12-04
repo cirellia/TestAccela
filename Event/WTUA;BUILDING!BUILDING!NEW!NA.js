@@ -1,5 +1,5 @@
 if(wfTask == "Review Consolidation" && wfStatus == "Completed"){     
-   assessImpactFees();
+   assessNewImpactFees();
    addResFees();
    
    if(AInfo["Use"] == "Commercial" && AInfo["Total Floor Area"] > 0){

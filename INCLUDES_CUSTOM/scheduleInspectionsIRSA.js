@@ -32,6 +32,6 @@ function scheduleInspectionsIRSA() {
         showMessage = true;
         comment("ERROR: IRSA function scheduleInspectionsIRSA(), please contact administrator. Error: " + err);
     }
-
+}
 
 

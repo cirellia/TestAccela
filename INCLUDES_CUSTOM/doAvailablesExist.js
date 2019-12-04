@@ -6,7 +6,3 @@ function doAvailablesExists() {
         }
         return false;
     }
-
-}
-
-//CALLED FROM WTUA:BUILDING/TEMPLATE/INSPECTION/NA

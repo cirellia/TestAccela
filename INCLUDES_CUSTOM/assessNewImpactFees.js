@@ -44,7 +44,7 @@ function assessNewImpactFees() {
                 }
                 //assess  Government Impact Fee
                 if (govImpactCat) {
-                    var govLookUpFee = lookup("BD_Government_Impact Category", govImpactCat);
+                    var govLookUpFee = lookup("Government_Impact_Category", govImpactCat);
                     if (govLookUpFee) {
                         updateFee(govLookUpFee, "IMPACT", "FINAL", 1, "N");
                     }

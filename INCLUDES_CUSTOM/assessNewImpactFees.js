@@ -1,6 +1,6 @@
 function assessNewImpactFees() {
     try {
-        logDebug("Begin assessImpactFees");
+        logDebug("Begin assessNewImpactFees");
         //loadAppSpecific(AInfo, capId);
         var calcImpactFees = AInfo["Calculate Impact Fees"];
         var waterFixtureCount = AInfo["Water Fixture Count"];
